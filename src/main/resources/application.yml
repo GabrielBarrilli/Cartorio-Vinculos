@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Cartorio
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto:
+        none
+
+    open-in-view: true
+
+  springdoc:
+    swagger-ui:
+      path: /cartorio-vinculos.html
+
+    api-docs:
+      path: /cartorio-vinculos
+
+    packages-to-scan: org.gabrielbarrilli.cartoriovinculos.web.controller
