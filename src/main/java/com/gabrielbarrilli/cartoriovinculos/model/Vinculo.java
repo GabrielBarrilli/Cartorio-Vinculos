@@ -13,52 +13,54 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import static jakarta.persistence.GenerationType.IDENTITY;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "pessoa")
+@Table(name = "vinculo")
 @EntityListeners(AuditingEntityListener.class)
-public class Pessoa {
+public class Vinculo {
 
     @Id
-    @Column(name = "id_pessoa")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_pessoa;
+    @Column(name = "id_vinculo")
+    @GeneratedValue(strategy = IDENTITY)
+    private Long id_vinculo;
 
-    @Column(name = "name_pessoa" , unique = true)
-    private String name_pessoa;
+    @Column(name = "name_vinculo")
+    private String name_vinculo;
 
     @CreatedDate
-    @Column(name = "created_pessoa")
-    private LocalDateTime created_pessoa;
+    @Column(name = "created_vinculo")
+    private LocalDateTime created_vinculo;
 
     @CreatedBy
-    @Column(name = "createdby_pessoa")
-    private Long createdby_pessoa;
+    @Column(name = "createdby_vinculo")
+    private Long createdBy_vinculo;
 
-    @Column(name = "enabled_pessoa")
-    private Boolean enabled_pessoa;
+    @Column(name = "enabled_vinculo")
+    private Boolean enabled_vinculo;
 
     @LastModifiedDate
-    @Column(name = "updated_pessoa")
-    private LocalDateTime updated_pessoa;
+    @Column(name = "updated_vinculo")
+    private LocalDateTime updated_vinculo;
 
     @CreatedBy
-    @Column(name = "updatedby_pessoa")
-    private Long updatedby_pessoa;
+    @Column(name = "updatedby_vinculo")
+    private Long updatedBy_vinculo;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Pessoa pessoa = (Pessoa) o;
-        return Objects.equals(id_pessoa, pessoa.id_pessoa);
+        Vinculo vinculo = (Vinculo) o;
+        return Objects.equals(id_vinculo, vinculo.id_vinculo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id_pessoa);
+        return Objects.hash(id_vinculo);
     }
 }
