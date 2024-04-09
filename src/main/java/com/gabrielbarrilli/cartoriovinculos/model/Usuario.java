@@ -26,24 +26,24 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome_usuario")
+    @Column(name = "nome_usuario", nullable = false, unique = true)
     private String nome_usuario;
 
-    @Column(name = "email_usuario")
+    @Column(name = "email_usuario", nullable = false, unique = true)
     private String email_usuario;
 
-    @Column(name = "password_usuario")
+    @Column(name = "password_usuario", nullable = false)
     private String passwd_usuario;
 
     @LastModifiedDate
-    @Column(name = "created_usuario")
+    @Column(name = "created_usuario", nullable = false)
     private LocalDateTime created_usuario;
 
     @CreatedBy
-    @Column(name = "createdby_usuario")
+    @Column(name = "createdby_usuario", nullable = false)
     private Long createdby_usuario;
 
-    @Column(name = "enabled_usuario")
+    @Column(name = "enabled_usuario", nullable = false)
     private Boolean enabled_usuario;
 
     @LastModifiedDate

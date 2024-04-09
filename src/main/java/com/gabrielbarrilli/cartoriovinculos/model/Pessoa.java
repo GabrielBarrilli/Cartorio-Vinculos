@@ -27,18 +27,18 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_pessoa;
 
-    @Column(name = "name_pessoa" , unique = true)
+    @Column(name = "name_pessoa", nullable = false, unique = true)
     private String name_pessoa;
 
     @CreatedDate
-    @Column(name = "created_pessoa")
+    @Column(name = "created_pessoa", nullable = false)
     private LocalDateTime created_pessoa;
 
     @CreatedBy
-    @Column(name = "createdby_pessoa")
+    @Column(name = "createdby_pessoa", nullable = false)
     private Long createdby_pessoa;
 
-    @Column(name = "enabled_pessoa")
+    @Column(name = "enabled_pessoa", nullable = false)
     private Boolean enabled_pessoa;
 
     @LastModifiedDate

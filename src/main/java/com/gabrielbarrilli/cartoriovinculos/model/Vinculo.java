@@ -29,18 +29,18 @@ public class Vinculo {
     @GeneratedValue(strategy = IDENTITY)
     private Long id_vinculo;
 
-    @Column(name = "name_vinculo")
+    @Column(name = "name_vinculo", nullable = false, unique = true)
     private String name_vinculo;
 
     @CreatedDate
-    @Column(name = "created_vinculo")
+    @Column(name = "created_vinculo", nullable = false)
     private LocalDateTime created_vinculo;
 
     @CreatedBy
-    @Column(name = "createdby_vinculo")
+    @Column(name = "createdby_vinculo", nullable = false)
     private Long createdBy_vinculo;
 
-    @Column(name = "enabled_vinculo")
+    @Column(name = "enabled_vinculo", nullable = false)
     private Boolean enabled_vinculo;
 
     @LastModifiedDate

@@ -28,14 +28,14 @@ public class PessoaVinculo {
     private Long id;
 
     @CreatedDate
-    @Column(name = "created_pessoa_vinculo")
+    @Column(name = "created_pessoa_vinculo", nullable = false)
     private LocalDateTime created_pessoavinculo;
 
     @CreatedBy
-    @Column(name = "createdby_pessoa_vinculo")
+    @Column(name = "createdby_pessoa_vinculo", nullable = false)
     private Long createdby_pessoavinculo;
 
-    @Column(name = "enabled_pessoa_vinculo")
+    @Column(name = "enabled_pessoa_vinculo", nullable = false)
     private Boolean enabled_pessoavinculo;
 
     @LastModifiedDate
@@ -47,15 +47,15 @@ public class PessoaVinculo {
     private Long updatedby_pessoavinculo;
 
     @ManyToOne
-    @JoinColumn(name = "id_pessoa_principal")
+    @JoinColumn(name = "id_pessoa_principal", nullable = false)
     private Pessoa pessoaPrincipal;
 
     @ManyToOne
-    @JoinColumn(name = "id_pessoa_secundaria")
+    @JoinColumn(name = "id_pessoa_secundaria", nullable = false)
     private Pessoa pessoaSecundaria;
 
     @ManyToOne
-    @JoinColumn(name = "id_vinculo")
+    @JoinColumn(name = "id_vinculo", nullable = false)
     private Vinculo vinculo;
 
     @Override
